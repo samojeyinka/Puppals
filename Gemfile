@@ -28,6 +28,9 @@ gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
+gem "slim-rails", "~> 3.6.1"
+gem "view_component"
+gem "tailwindcss-rails", "~> 2.0"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
@@ -53,6 +56,11 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem "factory_bot_rails"
+  gem 'dotenv-rails'
+  gem "guard-rspec", require: false
+  gem "pry"
+  gem "rspec-rails", "~> 6.0.3"
 end
 
 group :development do
@@ -70,4 +78,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'shoulda-matchers', '~> 5.0'
+  gem "simplecov"
 end
