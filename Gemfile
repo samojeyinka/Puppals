@@ -14,6 +14,10 @@ gem "sqlite3", "~> 1.4"
 #use postgresql as the database for Active Record
 gem "pg"
 # Use the Puma web server [https://github.com/puma/puma]
+
+#devise for user authentication and authorization
+gem 'devise', '~> 4.9', '>= 4.9.4'
+
 gem "puma", ">= 5.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
