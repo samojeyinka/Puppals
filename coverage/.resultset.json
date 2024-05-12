@@ -81,6 +81,20 @@
         "branches": {
         }
       },
+      "/home/fisola/code/Puppals/app/controllers/profiles_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/home/fisola/code/Puppals/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -105,6 +119,6 @@
         }
       }
     },
-    "timestamp": 1715461322
+    "timestamp": 1715526053
   }
 }
