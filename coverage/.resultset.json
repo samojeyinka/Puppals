@@ -1,72 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/fisola/code/Puppals/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/fisola/code/Puppals/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/fisola/code/Puppals/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/fisola/code/Puppals/app/controllers/pages_controller.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/fisola/code/Puppals/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/fisola/code/Puppals/app/components/nav_bar_component.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null
-        ],
-        "branches": {
-        }
-      },
       "/home/fisola/code/Puppals/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
@@ -87,6 +21,62 @@
         "branches": {
         }
       },
+      "/home/fisola/code/Puppals/app/components/nav_bar_component.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/fisola/code/Puppals/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/fisola/code/Puppals/app/controllers/feed_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/fisola/code/Puppals/app/controllers/pages_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/home/fisola/code/Puppals/app/controllers/profiles_controller.rb": {
         "lines": [
           0,
@@ -95,6 +85,22 @@
           0,
           null,
           null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/fisola/code/Puppals/app/helpers/application_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/fisola/code/Puppals/app/helpers/feed_helper.rb": {
+        "lines": [
           0,
           0
         ],
@@ -124,6 +130,15 @@
         "branches": {
         }
       },
+      "/home/fisola/code/Puppals/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/home/fisola/code/Puppals/app/models/profile.rb": {
         "lines": [
           0,
@@ -132,8 +147,21 @@
         ],
         "branches": {
         }
+      },
+      "/home/fisola/code/Puppals/app/models/user.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1715528574
+    "timestamp": 1715545661
   }
 }
