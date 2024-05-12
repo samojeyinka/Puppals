@@ -1,0 +1,20 @@
+doctype html
+html lang="en"
+  head
+    title Puppals
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+    <!-- ================== Tailwind =========================== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+  body
+    main
+      = render NavBarComponent.new(user_signed_in: user_signed_in?)
+      = yield
+
+
