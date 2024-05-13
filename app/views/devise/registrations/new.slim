@@ -6,20 +6,20 @@
 
       .mt-6
         = f.label :email
-        = f.email_field :email, autofocus: true, autocomplete: "email"
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: border_line
 
       .mt-6
         = f.label :password
+        = f.password_field :password, autocomplete: "new-password", class: border_line
         - if @minimum_password_length
-          em
-           | (#{@minimum_password_length} characters minimum)
-        = f.password_field :password, autocomplete: "new-password"
+          em.text-sm.font-semibold
+           | #{@minimum_password_length} characters minimum
 
       .mt-6
         = f.label :password_confirmation
-        = f.password_field :password_confirmation, autocomplete: "new-password"
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: border_line
 
-      .mt-4
-        = f.submit "Sign up"
+      .my-4.
+        = f.submit "Sign up", class: button_style_bg_blue
 
     = render "devise/shared/links"
