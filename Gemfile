@@ -28,6 +28,7 @@ gem "stimulus-rails"
 gem "slim-rails", "~> 3.6.1"
 gem "view_component"
 gem "tailwindcss-rails", "~> 2.0"
+gem "cloudinary"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
