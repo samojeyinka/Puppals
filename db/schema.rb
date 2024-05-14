@@ -40,6 +40,21 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_13_234539) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+
+  create_table "dogs", force: :cascade do |t|
+    t.string "name"
+    t.string "breed"
+    t.string "gender"
+    t.integer "size"
+    t.integer "age"
+    t.string "hobby"
+    t.text "bio"
+    t.bigint "user_id", null: false
+    t.bigint "profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_dogs_on_profile_id"
+    t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -63,10 +78,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_13_234539) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "profile_id"
+    t.bigint "dog_id"
+    t.index ["dog_id"], name: "index_users_on_dog_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "dogs", "profiles"
+  add_foreign_key "dogs", "users"
 end
