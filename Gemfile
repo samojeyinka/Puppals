@@ -59,6 +59,7 @@ group :development, :test do
   gem "guard-rspec", require: false
   gem "pry"
   gem "rspec-rails", "~> 6.0.3"
+  gem 'rails-controller-testing'
 end
 
 group :development do
