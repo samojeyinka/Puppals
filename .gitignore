@@ -5,6 +5,9 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 /config/database.yml
+/coverage/index.html
+/coverage/.resultset.json
+/coverage/.last_run.json
 # Ignore bundler config.
 /.bundle
 
