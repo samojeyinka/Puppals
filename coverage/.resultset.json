@@ -1,7 +1,102 @@
 {
   "RSpec": {
     "coverage": {
-      "C:/Users/DELL/Desktop/openSource/puppals/app/channels/application_cable/channel.rb": {
+      "/home/fisola/code/Puppals/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/fisola/code/Puppals/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/fisola/code/Puppals/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/fisola/code/Puppals/app/helpers/feed_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/fisola/code/Puppals/app/controllers/feeds_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/fisola/code/Puppals/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/fisola/code/Puppals/app/components/nav_bar_component.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/fisola/code/Puppals/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -11,7 +106,7 @@
         "branches": {
         }
       },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/channels/application_cable/connection.rb": {
+      "/home/fisola/code/Puppals/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -21,51 +116,7 @@
         "branches": {
         }
       },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/components/nav_bar_component.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/controllers/feeds_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/controllers/pages_controller.rb": {
+      "/home/fisola/code/Puppals/app/controllers/pages_controller.rb": {
         "lines": [
           0,
           0,
@@ -78,7 +129,7 @@
         "branches": {
         }
       },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/controllers/profiles_controller.rb": {
+      "/home/fisola/code/Puppals/app/controllers/profiles_controller.rb": {
         "lines": [
           0,
           0,
@@ -92,23 +143,7 @@
         "branches": {
         }
       },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/helpers/application_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/helpers/feed_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/jobs/application_job.rb": {
+      "/home/fisola/code/Puppals/app/jobs/application_job.rb": {
         "lines": [
           0,
           null,
@@ -121,7 +156,7 @@
         "branches": {
         }
       },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/mailers/application_mailer.rb": {
+      "/home/fisola/code/Puppals/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -131,8 +166,9 @@
         "branches": {
         }
       },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/models/application_record.rb": {
+      "/home/fisola/code/Puppals/app/models/dog.rb": {
         "lines": [
+          0,
           0,
           0,
           0
@@ -140,29 +176,9 @@
         "branches": {
         }
       },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/models/dog.rb": {
+      "/home/fisola/code/Puppals/app/models/profile.rb": {
         "lines": [
           0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/models/profile.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "C:/Users/DELL/Desktop/openSource/puppals/app/models/user.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          null,
           0,
           0,
           0
@@ -171,6 +187,6 @@
         }
       }
     },
-    "timestamp": 1715685118
+    "timestamp": 1715850698
   }
 }
