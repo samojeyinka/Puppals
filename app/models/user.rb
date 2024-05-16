@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :posts, dependent: :destroy
   has_many :comments
+  has_many :likes
 
   validates :email, presence: true
   validates :encrypted_password, presence: true
