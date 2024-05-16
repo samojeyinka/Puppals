@@ -4,7 +4,7 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-# /config/database.yml
+/config/database.yml
 /coverage/index.html
 /coverage/.resultset.json
 /coverage/.last_run.json
@@ -41,4 +41,3 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
-database.yml
