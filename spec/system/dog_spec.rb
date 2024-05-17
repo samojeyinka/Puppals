@@ -25,6 +25,10 @@ RSpec.describe "Dog", type: :system do
       expect(find_field("age").value).to eq("12 yrs")
       expect(find_field("select_age").value).to eq("")
 
+      select "Running and jogging", from: "select_hobby"
+      expect(find_field("hobby").value).to eq("Running and jogging")
+      expect(find_field("select_hobby").value).to eq("")
+
       # fill_in "bio", with: "A good hygiene dog"
     end
   end

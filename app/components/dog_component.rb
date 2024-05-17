@@ -16,5 +16,22 @@ class DogComponent < ViewComponent::Base
     options << "20+ yrs"
   end
 
+  def size
+    ["", "Miniature", "Small", "Medium", "Large", "Very Large"]
+  end
+
+  def hobby
+    [
+      "",
+      "Running and jogging",
+      "Hiking",
+      "Dancing",
+      "Rally",
+      "Swimming",
+      "Dog park",
+      "Fetch"
+    ]
+  end
+
   attr_reader :dog
 end
