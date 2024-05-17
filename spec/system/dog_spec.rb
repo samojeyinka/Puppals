@@ -29,21 +29,9 @@ RSpec.describe "Dog", type: :system do
       expect(find_field("hobby").value).to eq("Running and jogging")
       expect(find_field("select_hobby").value).to eq("")
 
-      # fill_in "bio", with: "A good hygiene dog"
+      fill_in "bio", with: "A good hygiene dog"
+
+      click_on "Continue"
     end
   end
 end
-
-# create_table "dogs", force: :cascade do |t|
-#   t.string "name"
-#   t.string "breed"
-#   t.string "gender"
-#   t.integer "size"
-#   t.integer "age"
-#   t.string "hobby"
-#   t.text "bio"
-#   t.bigint "user_id", null: false
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-#   t.index ["user_id"], name: "index_dogs_on_user_id"
-# end

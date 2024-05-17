@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class DogComponent < ViewComponent::Base
-
+  include ApplicationHelper
   def initialize(dog:)
     @dog = dog
   end
