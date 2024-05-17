@@ -13,7 +13,7 @@ RSpec.describe "Dog", type: :system do
       fill_in "name", with: "dogy"
       fill_in "breed", with: "akita"
       fill_in "gender", with: "male"
-      # fill_in "size", with: "large"
+      fill_in "size", with: "large"
       # fill_in "age", with: 12
       # fill_in "bio", with: "A good hygiene dog"
     end

@@ -5,12 +5,18 @@
       = f.file_field :photo_2, as: :file
       = f.file_field :photo_3, as: :file
 
-    .my-4
-      = f.text_field :name, autofocus: true, required: true, tabindex: 1, placeholder: "Pet name", class: "border-b-2 border-gray-500 focus:outline-none block placeholder-opacity-75"
+    .my-6
+      = f.text_field :name, autofocus: true, required: true, tabindex: 1, placeholder: "Pet name*",
+         class: "border-b-2 border-gray-500 focus:outline-none block placeholder-opacity-75"
 
-    .mb-4
-      = f.text_field :breed , required: true, tabindex: 1, placeholder: "Enter breed e.g Pit bull", class: "border-b-2 border-gray-500 focus:outline-none block"
+    .mb-6
+      = f.text_field :breed , required: true, tabindex: 1, placeholder: "Enter breed* e.g Pit bull", class: "border-b-2 border-gray-500 focus:outline-none block"
 
-    .mb-4.flex.border-b-2.border-gray-500.focus:outline-none.block
-      = f.text_field :gender, required: true, placeholder: "Gender", data: { "dog-target": "gender" }
+    .mb-6.flex.border-b-2.border-gray-500.focus:outline-none.block
+      = f.text_field :gender, required: true, placeholder: "Gender*", data: { "dog-target": "gender" }
       = f.select :select_gender, ["", "Male", "Female"], {}, data: { action: "change->dog#selectGender", "dog-target": "selectGender"}
+
+    .mb-6.flex.border-b-2.border-gray-500.focus:outline-none.block
+      = f.text_field :size, required: true, placeholder: "Size*", data: { "dog-target": "size" }
+      = f.select :select_size, ["", "Miniature", "Small", "Medium", "Large", "Very Large"], {},
+         data: { action: "change->dog#selectSize", "dog-target": "selectSize"}
