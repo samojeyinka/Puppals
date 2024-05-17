@@ -12,8 +12,15 @@ RSpec.describe "Dog", type: :system do
 
       fill_in "name", with: "dogy"
       fill_in "breed", with: "akita"
-      fill_in "gender", with: "male"
-      fill_in "size", with: "large"
+
+      select "Male", from: "select_gender"
+      expect(find_field("gender").value).to eq("Male")
+      expect(find_field("select_gender").value).to eq("")
+
+      select "Large", from: "select_size"
+      expect(find_field("size").value).to eq("Large")
+      expect(find_field("select_size").value).to eq("")
+
       # fill_in "age", with: 12
       # fill_in "bio", with: "A good hygiene dog"
     end
