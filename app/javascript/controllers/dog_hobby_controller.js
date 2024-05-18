@@ -10,7 +10,7 @@ export default class extends Controller {
         closeOnSelect: false,
       },
       settings: {
-        placeholderText: 'Hobby*',
+        placeholderText: '',
       },
     })
   }
