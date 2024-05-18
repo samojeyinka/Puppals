@@ -22,7 +22,7 @@ class DogComponent < ViewComponent::Base
 
   def hobby
     [
-      "",
+      "Select hobbies...",
       "Running and jogging",
       "Hiking",
       "Dancing",
