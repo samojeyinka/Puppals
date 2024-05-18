@@ -9,6 +9,9 @@ export default class extends Controller {
       settings: {
         closeOnSelect: false,
       },
+      settings: {
+        placeholderText: 'Hobby*',
+      },
     })
   }
 }
