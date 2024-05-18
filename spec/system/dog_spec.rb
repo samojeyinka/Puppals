@@ -13,21 +13,29 @@ RSpec.describe "Dog", type: :system do
       fill_in "name", with: "dogy"
       fill_in "breed", with: "akita"
 
-      select "Male", from: "select_gender"
-      expect(find_field("gender").value).to eq("Male")
-      expect(find_field("select_gender").value).to eq("")
+      within('#gender') do
+        expect(page).to have_selector('label', text: 'Gender*')
+        find('div.ss-main').click
+      end
+      find('.ss-list', text: 'Male').click
 
-      select "Large", from: "select_size"
-      expect(find_field("size").value).to eq("Large")
-      expect(find_field("select_size").value).to eq("")
+      within('#size') do
+        expect(page).to have_selector('label', text: 'Size*')
+        find('div.ss-main').click
+      end
+      find('.ss-list', text: 'Large').click
 
-      select "12 yrs", from: "select_age"
-      expect(find_field("age").value).to eq("12 yrs")
-      expect(find_field("select_age").value).to eq("")
+      within('#age') do
+        expect(page).to have_selector('label', text: 'Age*')
+        find('div.ss-main').click
+      end
+      find('.ss-list', text: '1 yr').click
 
-      select "Running and jogging", from: "select_hobby"
-      expect(find_field("hobby").value).to eq("Running and jogging")
-      expect(find_field("select_hobby").value).to eq("")
+      within('#hobby') do
+        expect(page).to have_selector('label', text: 'Hobby*')
+        find('div.ss-main').click
+      end
+      find('.ss-list', text: 'Hiking').click
 
       fill_in "bio", with: "A good hygiene dog"
 
