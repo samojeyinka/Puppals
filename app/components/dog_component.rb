@@ -17,19 +17,19 @@ class DogComponent < ViewComponent::Base
   end
 
   def size
-    ["", "Miniature", "Small", "Medium", "Large", "Very Large"]
+    ["Miniature", "Small", "Medium", "Large", "Very Large"]
   end
 
   def hobby
     [
-      "Select hobbies...",
       "Running and jogging",
       "Hiking",
       "Dancing",
       "Rally",
       "Swimming",
       "Dog park",
-      "Fetch"
+      "Fetch",
+      "others"
     ]
   end
 
