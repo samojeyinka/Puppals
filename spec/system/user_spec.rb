@@ -22,7 +22,7 @@ RSpec.describe "User", type: :system do
 
     click_on "Sign up"
 
-    expect(page).to have_content("You are signed in oliv@gmail.com")
+    expect(page).to have_content("Tell us about your pet")
     expect(page).to have_link("Sign Out")
   end
 
@@ -36,7 +36,7 @@ RSpec.describe "User", type: :system do
 
     click_on "Log in"
 
-    expect(page).to have_content("You are signed in oliv@gmail.com")
+    expect(page).to have_content("Tell us about your pet")
     expect(page).to have_link("Sign Out")
   end
 end
