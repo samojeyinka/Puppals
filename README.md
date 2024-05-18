@@ -10,6 +10,10 @@
   * Fetch from 'Upstream' - "git fetch upstream"
   * merge upstream -  "git merge upstream/main"
 
+
+# To change avoid permission denied when using bin
+  * chmod +x bin/importmap
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

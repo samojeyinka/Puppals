@@ -1,0 +1,38 @@
+.max-w-md.mx-auto.mt-6
+  = form_with url: profiles_path, method: :post, data: { turbo: false } do |f|
+    .flex.mt-4.w-72
+      = f.file_field :photo_1, as: :file
+      = f.file_field :photo_2, as: :file
+      = f.file_field :photo_3, as: :file
+
+    .my-6
+      = f.label "Name*", class: "block text-gray-700 text-sm font-bold mb-2"
+      = f.text_field :name, autofocus: true, required: true, tabindex: 1, placeholder: " Pet name*",
+        class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
+
+    .mb-6
+      = f.label "Breed*", class: "block text-gray-700 text-sm font-bold mb-2"
+      = f.text_field :breed , required: true, tabindex: 1, placeholder: " Enter breed* e.g Pit bull",
+      class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
+
+    .mb-6.w-64
+      = f.label "Gender*", class: "block text-gray-700 text-sm font-bold mb-2"
+      = f.select :select_gender, ["", "Male", "Female"], {include_blank: ""}, {data: {controller: "dog"}}
+
+    .mb-6.w-64
+      = f.label "Size*", class: "block text-gray-700 text-sm font-bold mb-2"
+      = f.select :select_size, size, {include_blank: ""}, {data: {controller: "dog"}}
+
+    .mb-6.w-64
+      = f.label "Age*", class: "block text-gray-700 text-sm font-bold mb-2"
+      = f.select :select_age, age_options, {include_blank: ""}, {data: {controller: "dog"}}
+
+    .mb-6.w-64
+      = f.label "Hobby*", class: "block text-gray-700 text-sm font-bold mb-2"
+      = f.select :select_hobby, hobby, {}, {multiple: true, data: {controller: "dog-hobby"}}
+
+    .mb-6
+      = f.label "Personality*", class: "block text-gray-700 text-sm font-bold mb-2"
+      = f.text_field :bio, autofocus: true, required: true, tabindex: 1, placeholder: " Energetic, enthusiastic.....",
+        class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
+    = f.submit "Continue", class: button_style_bg_blue
