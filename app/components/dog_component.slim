@@ -1,9 +1,21 @@
 .max-w-md.mx-auto.mt-6
   = form_with url: profiles_path, method: :post, data: { turbo: false } do |f|
-    .flex.mt-4.w-72
-      = f.file_field :photo_1, as: :file
-      = f.file_field :photo_2, as: :file
-      = f.file_field :photo_3, as: :file
+    .flex.mt-4.w-72.items-center.justify-center data-controller="dog"
+      .bg-gray-300.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->dog#triggerFirstUpload">
+        <i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="firstIcon"></i>
+      span style="display:none"
+        = f.file_field :photo_1, required: true, name: 'first_picture', data: { action: "change->dog#previewFirstImage", "dog-target": "firstInput" }
+
+      .bg-gray-300.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden.mx-4 data-action="click->dog#triggerSecondUpload">
+        <i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="secondIcon"></i>
+      span style="display:none"
+        = f.file_field :photo_2, name: 'second_picture', data: { action: "change->dog#previewSecondImage", "dog-target": "secondInput" }
+
+      .bg-gray-300.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->dog#triggerThirdUpload">
+        <i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="thirdIcon"></i>
+      span style="display:none"
+        = f.file_field :photo_3, name: 'third_picture', data: { action: "change->dog#previewThirdImage", "dog-target": "thirdInput" }
+
 
     .my-6
       = f.label "Name*", class: "block text-gray-700 text-sm font-bold mb-2"
@@ -35,4 +47,5 @@
       = f.label "Personality*", class: "block text-gray-700 text-sm font-bold mb-2"
       = f.text_field :bio, autofocus: true, required: true, tabindex: 1, placeholder: " Energetic, enthusiastic.....",
         class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
-    = f.submit "Continue", class: button_style_bg_blue
+    .mb-6.text-center
+      = f.submit "Continue", class: button_style_bg_blue
