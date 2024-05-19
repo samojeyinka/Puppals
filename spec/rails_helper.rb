@@ -9,7 +9,7 @@ require 'rspec/rails'
 require "capybara/rspec"
 require "support/factory_bot"
 # require "support/view_component"
-# require "view_component/test_helpers"
+require "view_component/test_helpers"
 require "devise"
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -66,6 +66,14 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include Devise::Test::IntegrationHelpers, type: :system
   config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include Devise::Test::ControllerHelpers, type: :component
+  config.include ViewComponent::TestHelpers, type: :component
+  config.include Capybara::RSpecMatchers, type: :component
+  config.include Capybara::DSL, type: :view_component
+
+  config.before(:each, type: :component) do
+    @request = vc_test_controller.request
+  end
 
   config.before(:example, type: :system) do
     driven_by(:selenium_chrome_headless)

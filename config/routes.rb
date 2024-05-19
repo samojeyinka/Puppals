@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :feeds, only: %i(index)
-  resources :dogs, only: %i(new)
+  resources :dogs, only: %i(new create)
   resources :profiles
   root 'pages#index'
 end

@@ -6,6 +6,7 @@ RSpec.describe "Dog", type: :system do
   context "when user registers/logins" do
     it "creates dog profile" do
       sign_in(user)
+
       visit "/dogs/new"
 
       expect(page).to have_content("Tell us about your pet")
