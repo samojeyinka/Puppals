@@ -11,8 +11,8 @@ RSpec.describe "Dog", type: :system do
 
       expect(page).to have_content("Tell us about your pet")
 
-      fill_in "name", with: "dogy"
-      fill_in "breed", with: "akita"
+      fill_in "dog[name]", with: "dogy"
+      fill_in "dog[breed]", with: "akita"
 
       within('#gender') do
         expect(page).to have_selector('label', text: 'Gender*')
@@ -38,7 +38,7 @@ RSpec.describe "Dog", type: :system do
       end
       find('.ss-list', text: 'Hiking').click
 
-      fill_in "bio", with: "A good hygiene dog"
+      fill_in "dog[bio]", with: "A good hygiene dog"
 
       click_on "Continue"
     end
