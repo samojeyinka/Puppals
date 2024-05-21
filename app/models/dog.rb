@@ -6,5 +6,5 @@ class Dog < ApplicationRecord
 
     validates :name, presence: true, uniqueness: true
     validates :breed, :gender, :size, presence: true
-    validates :bio, :age, presence: true
+    validates :bio, :age, :photo_1, presence: true
 end
