@@ -1,6 +1,5 @@
 class Dog < ApplicationRecord
     belongs_to :user
-    belongs_to :profile
     has_one_attached :photo_1
     has_one_attached :photo_2
     has_one_attached :photo_3
