@@ -1,6 +1,6 @@
-.flex.flex-col.items-center.justify-start.min-h-screen.pt-12
+.flex.flex-col.items-center.justify-start.min-h-screen.pt-18
   .max-w-md.mx-auto
-    <h6 class="text-center font-bold">Sign up</h6>
+    <h6 class="text-center text-2xl font-bold">Sign up</h6>
     = form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f|
       = render "devise/shared/error_messages", resource: resource
 
@@ -19,7 +19,6 @@
         = f.label :password_confirmation
         = f.password_field :password_confirmation, autocomplete: "new-password", class: border_line
 
-      .my-4.
-        = f.submit "Sign up", class: button_style_bg_blue
-
-    = render "devise/shared/links"
+      .my-6.flex
+        = f.submit "Sign up", class: "#{button_style_bg_blue} mr-10"
+        = render "devise/shared/links"
