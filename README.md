@@ -10,6 +10,8 @@
   * Fetch from 'Upstream' - "git fetch upstream"
   * merge upstream -  "git merge upstream/main"
 
+# DELETE UPATREAM BRANCH ON YOUR LOCAL MACHINE
+  * git push upstream --delete PostModel
 
 # To change avoid permission denied when using bin
   * chmod +x bin/importmap
