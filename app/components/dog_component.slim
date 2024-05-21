@@ -1,21 +1,20 @@
 .max-w-md.mx-auto.mt-6
   = form_with url: dogs_path, scope: :dog, method: :post, data: { turbo: false } do |f|
     .flex.mt-4.w-72.items-center.justify-center data-controller="dog"
-      .bg-gray-300.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->dog#triggerFirstUpload">
-        <i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="firstIcon"></i>
+      .bg-sky-200.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->dog#triggerFirstUpload"
+        i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="firstIcon"
       span style="display:none"
         = f.file_field :photo_1, required: true, as: :file, data: { action: "change->dog#previewFirstImage", "dog-target": "firstInput" }
 
-      .bg-gray-300.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden.mx-4 data-action="click->dog#triggerSecondUpload">
-        <i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="secondIcon"></i>
+      .bg-sky-200.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden.mx-4 data-action="click->dog#triggerSecondUpload"
+        i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="secondIcon"
       span style="display:none"
         = f.file_field :photo_2, as: :file, data: { action: "change->dog#previewSecondImage", "dog-target": "secondInput" }
 
-      .bg-gray-300.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->dog#triggerThirdUpload">
-        <i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="thirdIcon"></i>
+      .bg-sky-200.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->dog#triggerThirdUpload"
+        i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="thirdIcon"
       span style="display:none"
         = f.file_field :photo_3, as: :file, data: { action: "change->dog#previewThirdImage", "dog-target": "thirdInput" }
-
 
     .my-6
       = f.label "Name*", class: "block text-gray-700 text-sm font-bold mb-2"
