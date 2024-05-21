@@ -5,6 +5,6 @@ module ApplicationHelper
   end
 
   def border_line
-    "block border border-black rounded-md px-4 focus:shadow-outline"
+    "block border border-black rounded-md px-4 py-1 focus:shadow-outline"
   end
 end
