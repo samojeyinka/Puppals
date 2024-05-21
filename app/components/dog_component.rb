@@ -9,11 +9,11 @@ class DogComponent < ViewComponent::Base
   def age_options
     options = [""]
 
-    (0..19).each do |age|
-      option = age == 0 ? "less than 1 year" : "#{age} #{'yr'.pluralize(age)}"
+    (0..20).each do |age|
+      option = age == 0 ? 0 : age
       options << option
     end
-    options << "20+ yrs"
+    options
   end
 
   def size
@@ -32,6 +32,7 @@ class DogComponent < ViewComponent::Base
       "others"
     ]
   end
+  # option = age == 0 ? "less than 1 year" : "#{age} #{'yr'.pluralize(age)}"
 
   attr_reader :dog
 end
