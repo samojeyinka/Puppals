@@ -13,7 +13,7 @@ class DogComponent < ViewComponent::Base
       option = age == 0 ? "less than 1 year" : "#{age} #{'yr'.pluralize(age)}"
       options << option
     end
-    options << "20+ yrs"
+    options << "20 yrs"
   end
 
   def size

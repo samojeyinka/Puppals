@@ -1,21 +1,20 @@
 .max-w-md.mx-auto.mt-6
-  = form_with url: profiles_path, method: :post, data: { turbo: false } do |f|
+  = form_with url: dogs_path, scope: :dog, method: :post, data: { turbo: false } do |f|
     .flex.mt-4.w-72.items-center.justify-center data-controller="dog"
-      .bg-gray-300.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->dog#triggerFirstUpload">
-        <i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="firstIcon"></i>
+      .bg-sky-200.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->dog#triggerFirstUpload"
+        i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="firstIcon"
       span style="display:none"
-        = f.file_field :photo_1, required: true, name: 'first_picture', data: { action: "change->dog#previewFirstImage", "dog-target": "firstInput" }
+        = f.file_field :photo_1, required: true, as: :file, data: { action: "change->dog#previewFirstImage", "dog-target": "firstInput" }
 
-      .bg-gray-300.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden.mx-4 data-action="click->dog#triggerSecondUpload">
-        <i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="secondIcon"></i>
+      .bg-sky-200.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden.mx-4 data-action="click->dog#triggerSecondUpload"
+        i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="secondIcon"
       span style="display:none"
-        = f.file_field :photo_2, name: 'second_picture', data: { action: "change->dog#previewSecondImage", "dog-target": "secondInput" }
+        = f.file_field :photo_2, as: :file, data: { action: "change->dog#previewSecondImage", "dog-target": "secondInput" }
 
-      .bg-gray-300.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->dog#triggerThirdUpload">
-        <i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="thirdIcon"></i>
+      .bg-sky-200.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->dog#triggerThirdUpload"
+        i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="thirdIcon"
       span style="display:none"
-        = f.file_field :photo_3, name: 'third_picture', data: { action: "change->dog#previewThirdImage", "dog-target": "thirdInput" }
-
+        = f.file_field :photo_3, as: :file, data: { action: "change->dog#previewThirdImage", "dog-target": "thirdInput" }
 
     .my-6
       = f.label "Name*", class: "block text-gray-700 text-sm font-bold mb-2"
@@ -29,23 +28,23 @@
 
     #gender.mb-6.w-64
       = f.label "Gender*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.select :select_gender, ["Male", "Female"], {include_blank: "",}, {data: {controller: "dog"}}
+      = f.select :gender, ["Male", "Female"], {include_blank: "",}, {data: {controller: "dog"}}
 
     #size.mb-6.w-64
       = f.label "Size*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.select :select_size, size, {include_blank: ""}, {data: {controller: "dog"}}
+      = f.select :size, ["Miniature", "Small", "Medium", "Large", "Very Large"], {include_blank: ""}, {data: {controller: "dog"}}
 
     #age.mb-6.w-64
       = f.label "Age*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.select :select_age, age_options, {include_blank: ""}, {data: {controller: "dog"}}
+      = f.select :age, age_options, {include_blank: ""}, {data: {controller: "dog"}}
 
     #hobby.mb-6.w-64
       = f.label "Hobby*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.select :select_hobby, hobby, {}, {multiple: true, data: {controller: "dog-hobby"}}
+      = f.select :hobby, hobby, {}, {multiple: true, data: {controller: "dog-hobby"}}
 
     .mb-6
       = f.label "Personality*", class: "block text-gray-700 text-sm font-bold mb-2"
       = f.text_field :bio, autofocus: true, required: true, tabindex: 1, placeholder: " Energetic, enthusiastic.....",
         class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
     .mb-6.text-center
-      = f.submit "Continue", class: button_style_bg_blue
+      = f.submit "Continue", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-20 rounded-md focus:shadow-outline"

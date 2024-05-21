@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_17_210459) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_21_004755) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,15 +56,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_210459) do
     t.string "name"
     t.string "breed"
     t.string "gender"
-    t.integer "size"
+    t.string "size"
     t.integer "age"
     t.text "hobby", default: [], array: true
     t.text "bio"
     t.bigint "user_id", null: false
-    t.bigint "profile_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["profile_id"], name: "index_dogs_on_profile_id"
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
@@ -116,7 +114,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_210459) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "dogs", "profiles"
   add_foreign_key "dogs", "users"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
