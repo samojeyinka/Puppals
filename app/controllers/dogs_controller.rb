@@ -5,9 +5,9 @@ class DogsController < ApplicationController
   end
 
   def create
-    dog = current_user.build_dog(safe_params)
+    return redirect_to new_dog_path, alert: "User can only have one dog" if current_user.dog.present?
 
-    if dog.save
+    if current_user.create_dog(safe_params)
       redirect_to new_profile_path
     else
       @dog = DogComponent.new(dog: @dog)
