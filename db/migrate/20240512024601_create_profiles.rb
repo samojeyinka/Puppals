@@ -6,8 +6,6 @@ class CreateProfiles < ActiveRecord::Migration[7.1]
       t.text :bio
       t.string :country
       t.string :state
-      t.string :address_1
-      t.string :address_2
       t.timestamps
     end
   end
