@@ -23,16 +23,17 @@
 
     #country.mb-6.w-64
       = f.label "Country*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.select :country, countries, {}, {multiple: true, data: {controller: "profile-country"}}
+      = f.select :country, countries, {}, {data: {controller: "profile-country"}}
 
     .mb-6
-      = f.label "State*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.text_field :state, required: true, tabindex: 1, placeholder: "Enter your state",
+      = f.label "State", class: "block text-gray-700 text-sm font-bold mb-2"
+      = f.text_field :state, tabindex: 1, placeholder: "Enter your state",
       class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
 
     .mb-6
       = f.label "city*", class: "block text-gray-700 text-sm font-bold mb-2"
       = f.text_field :city, required: true, tabindex: 1, placeholder: "Enter your city",
       class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
+
     .mb-6.text-center
       = f.submit "Continue", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-20 rounded-md focus:shadow-outline"
