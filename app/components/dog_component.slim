@@ -1,5 +1,5 @@
 .max-w-md.mx-auto.mt-6
-  = form_with(model: @dog, data: { turbo: false }, local: true) do |f|
+  = form_with url: dogs_path, scope: :dog, method: :post, data: { turbo: false } do |f|
     .flex.mt-4.w-72.items-center.justify-center data-controller="dog"
       .bg-sky-200.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->dog#triggerFirstUpload"
         i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="firstIcon"
