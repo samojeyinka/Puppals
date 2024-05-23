@@ -23,6 +23,6 @@ end
 private
 
 def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :bio, :address_1, :address_2, :photo, country:[], state:[])
+    params.require(:profile).permit(:first_name, :last_name, :bio,  :photo, :state,:city, country: [])
 end
 end

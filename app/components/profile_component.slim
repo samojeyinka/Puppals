@@ -6,8 +6,6 @@
       span style="display:none"
         = f.file_field :photo, required: true, as: :file, data: { action: "change->profile#previewPhoto", "profile-target": "photoInput" }
 
-      
-
     .my-6
       = f.label "First Name*", class: "block text-gray-700 text-sm font-bold mb-2"
       = f.text_field :first_name, autofocus: true, required: true, tabindex: 1, placeholder: "Enter Your First Name",
@@ -15,31 +13,26 @@
 
     .mb-6
       = f.label "Last Name*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.text_field :last_name , required: true, tabindex: 1, placeholder: " Enter Your Last Name",
+      = f.text_field :last_name, required: true, tabindex: 1, placeholder: " Enter Your Last Name",
       class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
 
     .mb-6
       = f.label "Bio*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.text_area :bio , required: true, tabindex: 1, placeholder: "Tell us about yourself",
+      = f.text_area :bio, required: true, tabindex: 1, placeholder: "Tell us about yourself",
       class: "border border-gray-300 focus:outline-none rounded-md w-64 h-16 block placeholder-opacity-75"
 
-    #hobby.mb-6.w-64
+    #country.mb-6.w-64
       = f.label "Country*", class: "block text-gray-700 text-sm font-bold mb-2"
       = f.select :country, countries, {}, {multiple: true, data: {controller: "profile-country"}}
 
-    #hobby.mb-6.w-64
+    .mb-6
       = f.label "State*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.select :state,statesInNigeria, {}, {multiple: true, data: {controller: "profile-state"}}
-    
-    .mb-6
-      = f.label "Address 1*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.text_field :address_1, required: true, tabindex: 1, placeholder: "Enter address 1",
-      class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
-    
-    .mb-6
-      = f.label "Address 2*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.text_field :address_2, required: true, tabindex: 1, placeholder: "Enter address 2",
+      = f.text_field :state, required: true, tabindex: 1, placeholder: "Enter your state",
       class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
 
+    .mb-6
+      = f.label "city*", class: "block text-gray-700 text-sm font-bold mb-2"
+      = f.text_field :city, required: true, tabindex: 1, placeholder: "Enter your city",
+      class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
     .mb-6.text-center
       = f.submit "Continue", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-20 rounded-md focus:shadow-outline"
