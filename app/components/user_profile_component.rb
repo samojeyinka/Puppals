@@ -1,8 +1,8 @@
-class ProfileComponent < ViewComponent::Base
+class UserProfileComponent < ViewComponent::Base
     include ApplicationHelper
 
     def initialize(profile:)
-      @profile = profile
+      @user_profile = user_profile
     end
 
     def countries
@@ -32,5 +32,5 @@ class ProfileComponent < ViewComponent::Base
     end
 
 
-    attr_reader :profile
+    attr_reader :user_profile
   end

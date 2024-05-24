@@ -2,8 +2,9 @@
 
 class DogComponent < ViewComponent::Base
   include ApplicationHelper
-  def initialize(dog:)
+  def initialize(dog:, flash: "")
     @dog = dog
+    @flash = flash
   end
 
   def age_options
@@ -33,5 +34,5 @@ class DogComponent < ViewComponent::Base
     ]
   end
 
-  attr_reader :dog
+  attr_reader :dog, :flash
 end

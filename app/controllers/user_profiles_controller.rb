@@ -10,9 +10,9 @@ class UserProfilesController < ApplicationController
 
 
     def create
-        profile = current_user.build_profile(profile_params)
-        if profile.save
-            redirect_to profile
+        @profile = current_user.build_profile(profile_params)
+        if @profile.save
+            redirect_to user_profile_path(@profile)
         else
             @profile = ProfileComponent.new(profile: @profile)
             render :new
