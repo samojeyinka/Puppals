@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :feeds, only: %i(index)
   resources :dogs, only: %i(new create)
-  resources :profiles 
+  resources :user_profiles
+  get 'profile', to: 'dogs#profile', as: :profile
   root 'pages#index'
 end
