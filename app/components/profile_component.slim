@@ -1,39 +1,41 @@
-.max-w-md.mx-auto.mt-6
-  = form_with(model: @profile, data: { turbo: false }, local: true) do |f|
-    .flex.mt-4.w-72.items-center.justify-center data-controller="profile"
-      .bg-sky-200.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->profile#triggerPhotoUpload"
-        i class="fa-solid fa-user text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-profile-target="photoIcon"
-      span style="display:none"
-        = f.file_field :photo, required: true, as: :file, data: { action: "change->profile#previewPhoto", "profile-target": "photoInput" }
+#user-profile.flex.flex-col.items-center.justify-center.pt-2
+  .max-w-md.mx-auto.mt-2
+    p This is user profile. You are welcome
+    = form_with(model: @profile, data: { turbo: false }, local: true) do |f|
+      .flex.mt-4.w-72.items-center.justify-center data-controller="profile"
+        .bg-sky-200.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->profile#triggerPhotoUpload"
+          i class="fa-solid fa-user text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-profile-target="photoIcon"
+        span style="display:none"
+          = f.file_field :photo, required: true, as: :file, data: { action: "change->profile#previewPhoto", "profile-target": "photoInput" }
 
-    .my-6
-      = f.label "First Name*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.text_field :first_name, autofocus: true, required: true, tabindex: 1, placeholder: "Enter Your First Name",
+      .my-6
+        = f.label "First Name*", class: "block text-gray-700 text-sm font-bold mb-2"
+        = f.text_field :first_name, autofocus: true, required: true, tabindex: 1, placeholder: "Enter Your First Name",
+          class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
+
+      .mb-6
+        = f.label "Last Name*", class: "block text-gray-700 text-sm font-bold mb-2"
+        = f.text_field :last_name, required: true, tabindex: 1, placeholder: " Enter Your Last Name",
         class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
 
-    .mb-6
-      = f.label "Last Name*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.text_field :last_name, required: true, tabindex: 1, placeholder: " Enter Your Last Name",
-      class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
+      .mb-6
+        = f.label "Bio*", class: "block text-gray-700 text-sm font-bold mb-2"
+        = f.text_area :bio, required: true, tabindex: 1, placeholder: "Tell us about yourself",
+        class: "border border-gray-300 focus:outline-none rounded-md w-64 h-16 block placeholder-opacity-75"
 
-    .mb-6
-      = f.label "Bio*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.text_area :bio, required: true, tabindex: 1, placeholder: "Tell us about yourself",
-      class: "border border-gray-300 focus:outline-none rounded-md w-64 h-16 block placeholder-opacity-75"
+      #country.mb-6.w-64
+        = f.label "Country*", class: "block text-gray-700 text-sm font-bold mb-2"
+        = f.select :country, countries, {}, {data: {controller: "profile-country"}}
 
-    #country.mb-6.w-64
-      = f.label "Country*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.select :country, countries, {}, {data: {controller: "profile-country"}}
+      .mb-6
+        = f.label "State", class: "block text-gray-700 text-sm font-bold mb-2"
+        = f.text_field :state, tabindex: 1, placeholder: "Enter your state",
+        class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
 
-    .mb-6
-      = f.label "State", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.text_field :state, tabindex: 1, placeholder: "Enter your state",
-      class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
+      .mb-6
+        = f.label "city*", class: "block text-gray-700 text-sm font-bold mb-2"
+        = f.text_field :city, required: true, tabindex: 1, placeholder: "Enter your city",
+        class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
 
-    .mb-6
-      = f.label "city*", class: "block text-gray-700 text-sm font-bold mb-2"
-      = f.text_field :city, required: true, tabindex: 1, placeholder: "Enter your city",
-      class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
-
-    .mb-6.text-center
-      = f.submit "Continue", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-20 rounded-md focus:shadow-outline"
+      .mb-6.text-center
+        = f.submit "Continue", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-20 rounded-md focus:shadow-outline"
