@@ -16,7 +16,7 @@ RSpec.describe "User", type: :system do
 
     click_on "Register"
 
-    fill_in "Email", with: "oliv@gmail.com"
+    fill_in "Email", with: "oliv1@gmail.com"
     fill_in "user_password", with: "123456"
     fill_in "user_password_confirmation", with: "123456"
 
@@ -31,12 +31,12 @@ RSpec.describe "User", type: :system do
 
     click_on "Login"
 
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password
+    fill_in "Email", with: "oliv@gmail.com"
+    fill_in "Password", with: "123456"
 
     click_on "Log in"
 
-    expect(page).to have_content("Tell us about your pet")
+    expect(page).to have_content("This is feeds")
     expect(page).to have_link("Sign Out")
   end
 end
