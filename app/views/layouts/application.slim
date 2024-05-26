@@ -20,5 +20,8 @@ html lang="en"
         - flash.each do |key, value|
           = content_tag :div, value, class: "flash #{key} font-bold text-center", style: (key == "notice" ? "color: green;" : "color: red;")
       = yield
+      - if current_user
+        = render 'shared/mobnavbar'
+
 
 
