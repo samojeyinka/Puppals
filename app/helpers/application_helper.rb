@@ -7,4 +7,8 @@ module ApplicationHelper
   def border_line
     "block border border-black rounded-md px-4 py-1 focus:shadow-outline"
   end
+
+  def profile_input_page?
+    controller_name == "dogs" && action_name == "profile"
+  end
 end
