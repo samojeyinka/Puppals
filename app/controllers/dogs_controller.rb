@@ -1,57 +1,35 @@
 class DogsController < ApplicationController
+  before_action :check_existing_dog_profile, only: [:create]
 
   def new
+    @dog = DogComponent.new(dog: Dog.new)
   end
 
   def profile
-    @dog = DogComponent.new(dog: Dog.new)
   end
 
   def create
     dog = current_user.build_dog(safe_params)
     if dog.save
-      respond_to do |format|
-        format.turbo_stream do
-          render turbo_stream: [
-            turbo_stream.replace(
-              "dog-form",
-              UserProfileComponent.new(profile: Profile.new)
-            )
-          ]
-        end
-      end
+      redirect_to new_user_profile_path
     else
-      respond_to do |format|
-        format.turbo_stream do
-          render turbo_stream: [
-            turbo_stream.replace(
-              "dog-form",
-              DogComponent.new(dog: dog, flash: "Dog name exist")
-            ),
-          ]
-        end
-      end
-      # @dog = DogComponent.new(dog: dog, flash: "Dog name exist")
-      # render :new
+      @dog = DogComponent.new(dog: dog, flash: "Dog name exists")
+      render :new
     end
   end
 
   private
 
+  def check_existing_dog_profile
+    if current_user.dog.present?
+      respond_to do |format|
+        format.html { redirect_to profile_path, alert: "You can only have one dog profile"}
+        # format.turbo_stream
+      end
+    end
+  end
+
   def safe_params
     params.require(:dog).permit(:name, :breed, :gender, :size, :age, :bio, :photo_1, :photo_2, :photo_3, hobby: [])
   end
 end
-# respond_to do |format|
-#   format.turbo_stream do
-#     render turbo_stream: [
-#       turbo_stream.replace(
-#         "summary-table",
-#         SummaryTable.new(orders: all_orders(date_from_params))
-#       ),
-#       turbo_stream.replace(
-#         "form",
-#         NewOrderForm.new(order: Order.new(date: date_from_params))
-#       )
-#     ]
-#   end
