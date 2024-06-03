@@ -2,7 +2,6 @@ require "rails_helper"
 
 RSpec.describe "User", type: :request do
 
-
   it "signs in the user redirect to the feeds page" do
     user = create(:user, email: "olive11@gmail.com")
     # sign_in user  #=> This is helper exists for user to sign in
@@ -34,7 +33,7 @@ RSpec.describe "User", type: :request do
     expect(response).to redirect_to(root_path)
     follow_redirect!
 
-    expect(response).to redirect_to(profile_path)
+    expect(response).to redirect_to(new_dog_path)
     follow_redirect!
     expect(response.body).to include("Tell us about your pet")
   end
