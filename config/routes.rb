@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # devise_for :users
 
   devise_for :users, controllers: {
-    sessions: "sessions"
+    sessions: "sessions",
   }
 
   devise_scope :user do
@@ -13,6 +13,5 @@ Rails.application.routes.draw do
   resources :feeds, only: %i(index)
   resources :dogs, only: %i(new create)
   resources :user_profiles
-  get 'profile', to: 'dogs#profile', as: :profile
   root 'pages#index'
 end
