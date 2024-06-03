@@ -11,5 +11,8 @@ FactoryBot.define do
   end
 
   trait :registered do
+    after(:create) do |user|
+      create(:dog, name: "Puppy", user: user)
+    end
   end
 end
