@@ -68,7 +68,7 @@ RSpec.describe "Dog", type: :system do
 
       within('#country') do
         expect(page).to have_selector('label', text: 'Country*')
-        find('div.ss-main').click
+        find('div.ss-main', wait: 10).click
       end
       find('.ss-list', text: 'Angola').click
 
