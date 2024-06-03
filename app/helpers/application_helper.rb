@@ -9,6 +9,6 @@ module ApplicationHelper
   end
 
   def profile_input_page?
-    controller_name == "dogs" && action_name == "profile"
+    controller_name == "dogs" && action_name == "new"
   end
 end
