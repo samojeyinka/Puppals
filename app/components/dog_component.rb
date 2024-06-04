@@ -2,9 +2,8 @@
 
 class DogComponent < ViewComponent::Base
   include ApplicationHelper
-  def initialize(dog:, flash: "")
+  def initialize(dog:)
     @dog = dog
-    @flash = flash
   end
 
   def age_options

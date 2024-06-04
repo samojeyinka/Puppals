@@ -13,7 +13,7 @@ class DogsController < ApplicationController
     if dog.save
       redirect_to new_user_profile_path
     else
-      @dog = DogComponent.new(dog: dog, flash: "Dog name exists")
+      @dog = DogComponent.new(dog: dog)
       render :new
     end
   end
