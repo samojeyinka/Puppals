@@ -12,7 +12,7 @@ FactoryBot.define do
 
   trait :registered do
     after(:create) do |user|
-      create(:dog, name: "Puppy", user: user)
+      build(:dog, user: user)
     end
   end
 end

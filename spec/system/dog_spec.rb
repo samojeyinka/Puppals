@@ -71,7 +71,8 @@ RSpec.describe "Dog", type: :system do
       end
       find('.ss-list', text: 'Angola').click
 
-      fill_in "profile[city]", with: "Copenhagen"
+      fill_in "profile[state]", with: "Copenhagen"
+      fill_in "profile[city]", with: "Osterbro"
       attach_file('profile[photo]', 'app/assets/images/images.jpg', visible: false)
 
       click_on "Continue"
