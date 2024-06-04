@@ -5,7 +5,7 @@ class UserProfilesController < ApplicationController
     end
 
    def new
-        @profile = ProfileComponent.new(profile: Profile.new)
+        @profile = UserProfileComponent.new(profile: Profile.new)
     end
 
 
