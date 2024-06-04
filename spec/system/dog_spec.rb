@@ -1,6 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "Dog", type: :system do
+  let(:user) { create(:user, :registered, email: "feb@gmail.com")}
 
   context "when user registers" do
     it "creates dog profile" do
@@ -54,8 +55,6 @@ RSpec.describe "Dog", type: :system do
   end
 
   context "when user registers and has created dog profile" do
-    let!(:user) { create(:user, :registered)}
-
     it "creates user profile" do
       login_as(user, scope: :user)
       visit new_user_profile_path
