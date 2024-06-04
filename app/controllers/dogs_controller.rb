@@ -23,7 +23,7 @@ class DogsController < ApplicationController
   def check_existing_dog_profile
     if current_user.dog.present?
       respond_to do |format|
-        format.html { redirect_to profile_path, alert: "You can only have one dog profile"}
+        format.html { redirect_to new_dog_path, alert: "You can only have one dog profile"}
         # format.turbo_stream
       end
     end

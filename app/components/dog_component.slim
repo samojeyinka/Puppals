@@ -5,10 +5,8 @@
   p.text-center and visible
   .max-w-md.mx-auto.mt-6
     = form_with url: dogs_path, scope: :dog, method: :post, data: { turbo: false } do |f|
-      - if dog.errors.any?
-        ul
-          - dog.errors.full_messages.each do |message|
-            li.text-red-500.font-semibold.text-center = message
+
+      p.text-red-500.font-bold.text-sm = photo_error
       .flex.mt-4.w-72.items-center.justify-center data-controller="dog"
         .bg-sky-200.w-14.h-14.rounded-md.text-blue-700.relative.overflow-hidden data-action="click->dog#triggerFirstUpload"
           i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="firstIcon"
@@ -24,29 +22,34 @@
           i class="fa-solid fa-dog text-4xl absolute inset-0 flex py-2 px-2 items-center justify-center" data-dog-target="thirdIcon"
         span style="display:none"
           = f.file_field :photo_3, as: :file, data: { action: "change->dog#previewThirdImage", "dog-target": "thirdInput" }
-      p.mt-0.font-semibold.text-sm.text-center Max: 1 MB
+      p.mt-0.font-bold.text-sm.text-center Max: 1 MB
 
       .my-6
         = f.label "Name*", class: "block text-gray-700 text-sm font-bold mb-2"
         = f.text_field :name, autofocus: true, required: true, value: dog.name || nil, tabindex: 1, placeholder: " Pet name*",
           class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
+        p.text-red-500.font-bold.text-sm = name_error
 
       .mb-6
         = f.label "Breed*", class: "block text-gray-700 text-sm font-bold mb-2"
         = f.text_field :breed , required: true, tabindex: 1, placeholder: " Enter breed* e.g Pit bull",
         class: "border border-gray-300 focus:outline-none rounded-md w-64 h-8 block placeholder-opacity-75"
+        p.text-red-500.font-bold.text-sm = breed_error
 
       #gender.mb-6.w-64
         = f.label "Gender*", class: "block text-gray-700 text-sm font-bold mb-2"
         = f.select :gender, ["Male", "Female"], {include_blank: "",}, {data: {controller: "dog"}}
+        p.text-red-500.font-bold.text-sm = gender_error
 
       #size.mb-6.w-64
         = f.label "Size*", class: "block text-gray-700 text-sm font-bold mb-2"
         = f.select :size, ["Miniature", "Small", "Medium", "Large", "Very Large"], {include_blank: ""}, {data: {controller: "dog"}}
+        p.text-red-500.font-bold.text-sm = size_error
 
       #age.mb-6.w-64
         = f.label "Age*", class: "block text-gray-700 text-sm font-bold mb-2"
         = f.select :age, age_options, {include_blank: ""}, {data: {controller: "dog"}}
+        p.text-red-500.font-bold.text-sm = age_error
 
       #hobby.mb-6.w-64
         = f.label "Hobby*", class: "block text-gray-700 text-sm font-bold mb-2"

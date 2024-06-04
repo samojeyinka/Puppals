@@ -6,7 +6,7 @@ class Dog < ApplicationRecord
 
     validates :name, presence: true, uniqueness: true
     validates :breed, :gender, :size, presence: true
-    validates :bio, :age, presence: true
+    validates :bio, :age, :hobby, presence: true
     validate :valid_image
 
     def valid_image
